@@ -82,7 +82,7 @@ public class LootGeneratorChestTileEntity extends LockableLootTileEntity impleme
     public void load(BlockState state, CompoundNBT nbt) {
         super.load(state, nbt);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-        ItemStackHelper.loadAll(nbt, this.items);
+        ItemStackHelper.loadAllItems(nbt, this.items);
         if (nbt.contains("ItemChances")) {
             int[] savedChances = nbt.getIntArray("ItemChances");
             System.arraycopy(savedChances, 0, this.itemChances, 0, Math.min(savedChances.length, this.itemChances.length));
@@ -92,7 +92,7 @@ public class LootGeneratorChestTileEntity extends LockableLootTileEntity impleme
     @Override
     public CompoundNBT save(CompoundNBT nbt) {
         super.save(nbt);
-        ItemStackHelper.saveAll(nbt, this.items);
+        ItemStackHelper.saveAllItems(nbt, this.items);
         nbt.putIntArray("ItemChances", this.itemChances);
         return nbt;
     }
