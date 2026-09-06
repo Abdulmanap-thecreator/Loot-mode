@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT"
+
+[[mods]]
+modId="lootmod"
+version="1.0.0"
+displayName="Loot Generator Mod"
+authors="Developer"
+description='A mod that generates custom random chest loot.'
+
+[[dependencies.lootmod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36.2.39,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.lootmod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"
